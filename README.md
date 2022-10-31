@@ -1,14 +1,26 @@
-# goit-react-hw-06-phonebook
+# goit-react-hw-07-phonebook
 
-Refactor the "Contact Book" application code by adding state control using the
-[Redux Toolkit] library (https://redux-toolkit.js.org/). Let the Redux state
-look like this.
+Contact book - Redux - API
 
-{ contacts: [], filter: "" }
+Refactoring of the Contact Book application code. Remove the code responsible
+for storing and reading contacts from the local storage, and add communication
+with the backend for storing contacts.
 
-- Create a repository with `configureStore()`
-- Use `createSlice()`
-- Create actions to save and delete a contact, and update the filter
-- Link React-components to Redux-logic with bibliothec hooks
-  [react-redux](https://react-redux.js.org/)
-- Use the Redux Persist library to save an array of contacts to local storage
+Backend Create your own personal backend for development with the UI service
+mockapi.io. Sign up using your GitHub account. Create a resource contacts to get
+your handpoint /contacts.
+
+Contact schema State Form. Add the load and error indicator handling to the
+Redux state. To do this, change the state form.
+
+{ contacts: [ items: [], isLoading: false, error: null ], filter: "" }
+
+Operations. Use createAsyncThunk to declare asynchronous action generators and
+make HTTP requests. Do the processing of the actions and change data in Redux
+state with createSlice.
+
+Declare the following operations:
+
+fetchContacts - get an array of contacts (GET method) by GET request. The basic
+type of action "contacts/fetchAll". addContact - add contact (POST method).
+Basic type of action "contacts/addContact".
